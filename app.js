@@ -8,6 +8,7 @@ dotenv.config()
 
 mongoose
   .connect(process.env.MONGODB_URI, {
+    useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -21,7 +22,7 @@ mongoose
   });
 
 app.use(express.json())
-app.use('/api', require('./router.js'))
+app.use('/api', require('./router'))
 cronJob()
 
 const PORT = process.env.PORT || 3333;

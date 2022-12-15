@@ -13,15 +13,13 @@ const getVideos = async (req,res)  => {
     let total
     try {
         if(q){
-            vidoes = await VideoModel.fuzzySearch({
-                query:q,
-            }).sort({ [sortBy] : 1 });
+            videos = await VideoModel.fuzzySearch(q).sort({ [sortBy]: 1 });
             total = videos.length;
-            videos = res.splice(page * 10, 10);
         }
         else{
+            console.log("Inside GET API 4")
             total = await VideoModel.estimatedDocumentCount();
-        videos = await VideoModel.find(
+            videos = await VideoModel.find(
         {},
         {},
         {
@@ -30,16 +28,17 @@ const getVideos = async (req,res)  => {
         }
       ).sort({ [sortBy]: 1 });
     }
+       
         const totalPages = Math.ceil(total / 10);
         const hasPrev = page > 0;
         const hasNext = page < totalPages;
 
         res.json({
         videos,
-        hasPrev,
-        hasNext,
-        totalItems,
+        total,
         totalPages,
+        hasPrev,
+        hasNext
         });   
         
     } catch (error) {
@@ -64,7 +63,7 @@ const fetchYTVideos = async (apiKey,q) => {
             q,
             publishedAfter,
           });
-      
+       
           const videos = items.map((item) => ({
             title: item.snippet.title,
             description: item.snippet.description,
@@ -85,4 +84,4 @@ const fetchYTVideos = async (apiKey,q) => {
     }
 }
 
-module.exports = {getVideos,fetchYTVidoes}
+module.exports = {getVideos,fetchYTVideos}

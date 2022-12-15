@@ -4,14 +4,13 @@ const dotenv = require('dotenv')
 const {fetchYTVideos} = require('../utils/controller')
 
 
-const cronJob = async (req,res) => {
+module.exports = () => {
     cron.schedule('* * * * *', async () => {
         try {
             const videos = await fetchYTVideos(
                 process.env.YOUTUBE_API_KEY,
-                secrets.YOUTUBE_SEARCH_QUERY
+                "python"
               );
-    
             await VideoModel.create(videos);
         } catch (error) {
             console.error("Error saving in DB")
@@ -19,4 +18,3 @@ const cronJob = async (req,res) => {
     });
 }
 
-module.exports = {cronJob}
