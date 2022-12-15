@@ -35,4 +35,10 @@ MONGODB_URI =
 YOUTUBE_API_KEY=
 SEARCH_QUERY=
 ```
+3. Install dependencies
 
+`npm install`
+
+4. Run in development mode
+
+`npm start`
