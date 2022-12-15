@@ -45,5 +45,5 @@ SEARCH_QUERY=
 
 5. API Route
 
-PORT:3333
-Sampple : `http://localhost:3333/api/videos?q=python`
+`PORT:3333`
+`http://localhost:3333/api/videos?q=python`
