@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express()
 const dotenv = require('dotenv')
+const cronJob = require('./cron/video-cron')
 const mongoose = require("mongoose");
 dotenv.config()
 
@@ -20,7 +21,8 @@ mongoose
   });
 
 app.use(express.json())
-// app.use('/api', require('./router.js'))
+app.use('/api', require('./router.js'))
+cronJob()
 
 const PORT = process.env.PORT || 3333;
 app.listen(PORT, console.log(`Server is live on ${PORT}`))
