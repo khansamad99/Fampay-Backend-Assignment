@@ -21,5 +21,18 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
  * YouTube data v3 API
  * MongoDB
 
+### Development
 
+1. Clone the project
+
+`git clone https://github.com/khansamad99/Fampay-Backend-Assignment`
+
+2. Add these .env[Have Provided them on mail]
+
+```
+# For default values, refer `.env.defaults` file
+MONGODB_URI = 
+YOUTUBE_API_KEY=
+SEARCH_QUERY=
+```
 
