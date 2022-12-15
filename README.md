@@ -1,10 +1,8 @@
- <div align="center"> 
- <img width ="300" src="https://externship.github.in/assets/Logo/Logo%20Color.svg"/>
- </div>
+ 
 
 <h1 align="center">
 <img  width="30" src="https://user-images.githubusercontent.com/77020164/146640192-61300696-16fd-4e8d-be1e-226ba1f90c52.png"/>
-Fampay - Backend Assignment Extern
+Fampay - Backend Assignment 
 </h1>
 
 
