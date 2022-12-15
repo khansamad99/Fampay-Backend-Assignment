@@ -9,8 +9,9 @@ module.exports = () => {
         try {
             const videos = await fetchYTVideos(
                 process.env.YOUTUBE_API_KEY,
-                "python"
+                process.env.SEARCH_QUERY
               );
+            console.log(videos)
             await VideoModel.create(videos);
         } catch (error) {
             console.error("Error saving in DB")
