@@ -42,3 +42,8 @@ SEARCH_QUERY=
 4. Run in development mode
 
 `npm start`
+
+5. API Route
+
+PORT:3333
+Sampple : `http://localhost:3333/api/videos?q=python`
